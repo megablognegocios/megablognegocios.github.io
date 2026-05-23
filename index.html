@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Diego Deotti | Frontend Architect</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@600;700;800&amp;family=Inter:wght@400;500&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary": "#adc6ff",
+                    "on-primary-fixed": "#131b2e",
+                    "primary": "#bec6e0",
+                    "outline-variant": "#45464d",
+                    "on-primary-container": "#798098",
+                    "on-background": "#e4e2e4",
+                    "on-error": "#690005",
+                    "error-container": "#93000a",
+                    "on-tertiary-container": "#357df1",
+                    "background": "#131315",
+                    "outline": "#909097",
+                    "on-secondary-fixed-variant": "#8c0053",
+                    "surface-container": "#1f1f21",
+                    "surface-bright": "#39393b",
+                    "on-error-container": "#ffdad6",
+                    "surface-variant": "#353436",
+                    "secondary-fixed": "#ffd9e4",
+                    "on-tertiary-fixed": "#001a42",
+                    "inverse-primary": "#565e74",
+                    "secondary-container": "#aa0266",
+                    "tertiary-fixed-dim": "#adc6ff",
+                    "surface-dim": "#131315",
+                    "surface-container-high": "#2a2a2b",
+                    "on-tertiary-fixed-variant": "#004395",
+                    "surface-container-highest": "#353436",
+                    "tertiary-container": "#00163a",
+                    "surface-container-low": "#1b1b1d",
+                    "on-secondary-container": "#ffbad3",
+                    "on-secondary": "#640039",
+                    "tertiary-fixed": "#d8e2ff",
+                    "secondary-fixed-dim": "#ffb0cd",
+                    "on-primary-fixed-variant": "#3f465c",
+                    "surface-container-lowest": "#0e0e10",
+                    "surface": "#131315",
+                    "primary-fixed": "#dae2fd",
+                    "on-secondary-fixed": "#3e0022",
+                    "inverse-surface": "#e4e2e4",
+                    "surface-tint": "#bec6e0",
+                    "primary-fixed-dim": "#bec6e0",
+                    "on-primary": "#283044",
+                    "on-surface-variant": "#c6c6cd",
+                    "error": "#ffb4ab",
+                    "inverse-on-surface": "#303032",
+                    "on-surface": "#e4e2e4",
+                    "secondary": "#ffb0cd",
+                    "on-tertiary": "#002e6a",
+                    "primary-container": "#0f172a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "base": "4px",
+                    "section-padding-mobile": "64px",
+                    "section-padding-desktop": "120px",
+                    "gutter": "24px",
+                    "container-max": "1280px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Inter"],
+                    "label-mono": ["JetBrains Mono"],
+                    "headline-md": ["Hanken Grotesk"],
+                    "headline-sm": ["Hanken Grotesk"],
+                    "body-md": ["Inter"],
+                    "display-lg-mobile": ["Hanken Grotesk"],
+                    "display-lg": ["Hanken Grotesk"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-mono": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "headline-md": ["40px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "headline-sm": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "display-lg-mobile": ["48px", {"lineHeight": "1.1", "fontWeight": "800"}],
+                    "display-lg": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #bec6e0 0%, #ffb0cd 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .button-gradient {
+            background: linear-gradient(90deg, #aa0266 0%, #357df1 100%);
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        .floating { animation: float 6s ease-in-out infinite; }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/70 backdrop-blur-xl border-b border-white/10 shadow-sm">
+<div class="flex justify-between items-center px-gutter py-4 max-w-container-max mx-auto">
+<a class="font-headline-sm text-headline-sm font-bold text-on-surface tracking-tighter" href="#">
+                Diego Deotti
+            </a>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-label-mono text-label-mono text-primary font-bold border-b-2 border-primary pb-1 transition-all" href="#">Home</a>
+<a class="font-label-mono text-label-mono text-on-surface-variant hover:text-on-surface transition-colors hover:bg-white/5 px-2 py-1 rounded" href="#">Resume</a>
+<a class="font-label-mono text-label-mono text-on-surface-variant hover:text-on-surface transition-colors hover:bg-white/5 px-2 py-1 rounded" href="#">Portfolio</a>
+<a class="font-label-mono text-label-mono text-on-surface-variant hover:text-on-surface transition-colors hover:bg-white/5 px-2 py-1 rounded" href="#">Contact</a>
+</div>
+<button class="button-gradient text-white px-6 py-2 rounded-full font-label-mono text-label-mono hover:scale-105 active:scale-95 transition-all shadow-lg">
+                Hire Me
+            </button>
+</div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center pt-24 overflow-hidden">
+<!-- Background Decorative Elements -->
+<div class="absolute top-1/4 -right-20 w-96 h-96 bg-secondary-container/20 blur-[120px] rounded-full"></div>
+<div class="absolute bottom-1/4 -left-20 w-96 h-96 bg-tertiary-container/30 blur-[120px] rounded-full"></div>
+<div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<div class="lg:col-span-7 space-y-8 z-10">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-outline-variant bg-surface-container-low">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span class="font-label-mono text-label-mono text-on-surface-variant">Disponível para novos projetos</span>
+</div>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg">
+                        Arquitetando <span class="hero-gradient">Experiências Digitais</span> de Alta Performance.
+                    </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                        Sou Diego Deotti, um desenvolvedor frontend focado em transformar layouts complexos em interfaces fluidas, acessíveis e tecnicamente impecáveis. Especialista em React, TypeScript e na arte de criar sistemas de design escaláveis.
+                    </p>
+<div class="flex flex-wrap gap-4 pt-4">
+<button class="button-gradient text-white px-8 py-4 rounded-xl font-label-mono text-label-mono flex items-center gap-2 hover:shadow-[0_0_20px_rgba(170,2,102,0.4)] transition-all group">
+                            Ver Portfólio
+                            <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+<button class="px-8 py-4 rounded-xl font-label-mono text-label-mono border border-outline-variant text-on-surface hover:bg-white/5 transition-all">
+                            Entrar em Contato
+                        </button>
+</div>
+<div class="flex items-center gap-6 pt-8 grayscale opacity-50">
+<span class="font-label-mono text-[12px] uppercase tracking-widest text-on-surface-variant">Tech Stack</span>
+<div class="flex gap-4">
+<span class="material-symbols-outlined" title="React">data_object</span>
+<span class="material-symbols-outlined" title="TypeScript">code</span>
+<span class="material-symbols-outlined" title="Architecture">architecture</span>
+</div>
+</div>
+</div>
+<div class="lg:col-span-5 relative z-10 hidden lg:block">
+<div class="floating relative">
+<div class="glass-card p-4 rounded-2xl rotate-3 translate-x-4 shadow-2xl">
+<img alt="Code representation" class="rounded-xl w-full h-[500px] object-cover" data-alt="A high-contrast, professional close-up shot of a computer screen displaying elegant, colorful lines of code in a dark mode environment. The lighting is moody and technical, with subtle purple and blue lens flares reflecting off the glass. The focus is sharp on the foreground syntax highlighting, while the background softly blurs into a complex web of modern technology aesthetics. The overall mood is sophisticated and technical, perfectly aligning with a premium developer portfolio." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdSubIJ9cdfuM11xy4sYnj8QTuZwSHvQNUwpIMQoybs6YqIwR7fU79xB8yHXW_b9mYUk08G-5lMvccQIamA96o_wXM4cUCBMwu9RSWZcsRT6e-hewkoB03FfL2ac8fwGXt1A-GV0D4ZKP-knPjdl2B5FStvH0cAfG0tNmaaNOyvuFPRP5F03n7bU1RKkJ5OqBHbKp8YTGNxN2-u06f60o1qYweBr_46Rjiov_-5xS-uFNcGH3nz8FPf4HDVAOzBAJQ1fkR1qg5V-8"/>
+</div>
+<!-- Decorative Code Snippet Card -->
+<div class="absolute -bottom-6 -left-12 glass-card p-6 rounded-xl -rotate-6 shadow-2xl max-w-[280px]">
+<div class="flex gap-2 mb-4">
+<div class="w-3 h-3 rounded-full bg-error"></div>
+<div class="w-3 h-3 rounded-full bg-tertiary"></div>
+<div class="w-3 h-3 rounded-full bg-secondary"></div>
+</div>
+<p class="font-label-mono text-xs text-primary leading-relaxed">
+<span class="text-secondary">const</span> <span class="text-tertiary">DiegoDeotti</span> = {<br/>
+                                  role: <span class="text-on-secondary-container">'Frontend Architect'</span>,<br/>
+                                  passion: <span class="text-on-secondary-container">'Clean UI'</span>,<br/>
+                                  skills: [<span class="text-on-secondary-container">'React'</span>, <span class="text-on-secondary-container">'DX'</span>]<br/>
+                                };
+                            </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Brief Skills Bento (Visual Interest) -->
+<section class="py-section-padding-desktop max-w-container-max mx-auto px-gutter">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="glass-card p-8 rounded-3xl hover:border-primary/40 transition-all duration-500">
+<span class="material-symbols-outlined text-4xl text-secondary mb-6" style="font-variation-settings: 'FILL' 1;">speed</span>
+<h3 class="font-headline-sm text-headline-sm mb-2 text-on-surface">Performance</h3>
+<p class="text-on-surface-variant font-body-md">Interfaces otimizadas para carregamento instantâneo e Core Web Vitals impecáveis.</p>
+</div>
+<div class="glass-card p-8 rounded-3xl hover:border-primary/40 transition-all duration-500">
+<span class="material-symbols-outlined text-4xl text-tertiary mb-6" style="font-variation-settings: 'FILL' 1;">palette</span>
+<h3 class="font-headline-sm text-headline-sm mb-2 text-on-surface">Design Precision</h3>
+<p class="text-on-surface-variant font-body-md">Fidelidade absoluta ao design original com micro-interações que encantam o usuário.</p>
+</div>
+<div class="glass-card p-8 rounded-3xl hover:border-primary/40 transition-all duration-500">
+<span class="material-symbols-outlined text-4xl text-primary mb-6" style="font-variation-settings: 'FILL' 1;">terminal</span>
+<h3 class="font-headline-sm text-headline-sm mb-2 text-on-surface">Scalability</h3>
+<p class="text-on-surface-variant font-body-md">Código modular e tipado, preparado para crescer com o seu negócio e time.</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="relative w-full bottom-0 bg-surface-container-lowest border-t border-white/5">
+<div class="flex flex-col md:flex-row justify-between items-center px-gutter py-16 max-w-container-max mx-auto">
+<div class="mb-8 md:mb-0 text-center md:text-left">
+<h2 class="font-headline-sm text-headline-sm text-on-surface mb-2">Diego Deotti</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xs">© 2024 Developer Portfolio. Built with precision.</p>
+</div>
+<div class="flex flex-col items-center md:items-end gap-6">
+<div class="flex gap-8">
+<a class="font-label-mono text-label-mono text-on-surface-variant hover:text-secondary transition-colors focus:outline-none underline" href="#">GitHub</a>
+<a class="font-label-mono text-label-mono text-on-surface-variant hover:text-secondary transition-colors focus:outline-none underline" href="#">LinkedIn</a>
+<a class="font-label-mono text-label-mono text-on-surface-variant hover:text-secondary transition-colors focus:outline-none underline" href="#">Twitter</a>
+<a class="font-label-mono text-label-mono text-on-surface-variant hover:text-secondary transition-colors focus:outline-none underline" href="#">Email</a>
+</div>
+<div class="text-on-surface-variant/40 font-label-mono text-xs">
+                    BRAZIL • REMOTE • UTC-3
+                </div>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interaction for the floating code card on mouse move
+        const heroSection = document.querySelector('section');
+        const heroImage = document.querySelector('.floating');
+        
+        if (heroSection && heroImage) {
+            heroSection.addEventListener('mousemove', (e) => {
+                const xAxis = (window.innerWidth / 2 - e.pageX) / 50;
+                const yAxis = (window.innerHeight / 2 - e.pageY) / 50;
+                heroImage.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+            });
+
+            heroSection.addEventListener('mouseenter', () => {
+                heroImage.style.transition = 'none';
+            });
+
+            heroSection.addEventListener('mouseleave', () => {
+                heroImage.style.transition = 'all 0.5s ease';
+                heroImage.style.transform = `rotateY(0deg) rotateX(0deg)`;
+            });
+        }
+    </script>
+</body></html>
